@@ -58,3 +58,9 @@ class Cart:
             print('Заказ оплачен')
         else:
             print('Проблема с оплатой')
+
+    def print_check(self):
+        print('---Your check---')
+        for key, value in sorted(self.goods.items(), key=lambda x: x[0].name):
+            print(f'{key.name} {key.price} {value} {key.price * value}')
+        print(f'---Total: {self.total}---')
