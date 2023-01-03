@@ -48,3 +48,7 @@ class Cart:
         else:
             self.__total -= product.price * self.goods[product]
             del self.goods[product]
+
+    @property
+    def total(self):
+        return self.__total
