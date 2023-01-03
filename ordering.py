@@ -1,3 +1,5 @@
+from collections import defaultdict
+
 class Product:
     def __init__(self, name, price):
         self.name = name
@@ -28,3 +30,9 @@ class User:
         else:
             self.balance -= value
             return True
+
+class Cart:
+    def __init__(self, user):
+        self.user = user
+        self.goods = defaultdict(int)
+        self.__total = 0
