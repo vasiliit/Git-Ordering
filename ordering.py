@@ -36,3 +36,7 @@ class Cart:
         self.user = user
         self.goods = defaultdict(int)
         self.__total = 0
+
+    def add(self, product, count=1):
+        self.goods[product] = self.goods.get(product, 0) + count
+        self.__total += product.price * count
