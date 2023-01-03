@@ -10,3 +10,11 @@ class User:
 
     def __str__(self):
         return f'Пользователь {self.login}, баланс - {self.balance}'
+    
+    @property
+    def balance(self):
+        return self.__balance
+
+    @balance.setter
+    def balance(self, value):
+        self.__balance = value
