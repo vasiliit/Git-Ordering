@@ -40,3 +40,11 @@ class Cart:
     def add(self, product, count=1):
         self.goods[product] = self.goods.get(product, 0) + count
         self.__total += product.price * count
+
+    def remove(self, product, count=1):
+        if self.goods[product] > count:
+            self.goods[product] -= count
+            self.__total -= product.price * count
+        else:
+            self.__total -= product.price * self.goods[product]
+            del self.goods[product]
