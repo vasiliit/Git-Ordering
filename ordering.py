@@ -21,3 +21,10 @@ class User:
 
     def deposit(self, value):
         self.__balance += value
+
+    def payment(self, value):
+        if self.balance < value:
+            print('Не зватает средств на балансе. Пополните счет')
+        else:
+            self.balance -= value
+            return True
