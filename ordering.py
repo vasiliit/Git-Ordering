@@ -26,7 +26,7 @@ class User:
 
     def payment(self, value):
         if self.balance < value:
-            print('Не зватает средств на балансе. Пополните счет')
+            print('Не хватает средств на балансе. Пополните счет')
         else:
             self.balance -= value
             return True
@@ -52,3 +52,9 @@ class Cart:
     @property
     def total(self):
         return self.__total
+
+    def order(self):
+        if self.user.payment(self.total):
+            print('Заказ оплачен')
+        else:
+            print('Проблема с оплатой')
