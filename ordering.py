@@ -18,3 +18,6 @@ class User:
     @balance.setter
     def balance(self, value):
         self.__balance = value
+
+    def deposit(self, value):
+        self.__balance += value
